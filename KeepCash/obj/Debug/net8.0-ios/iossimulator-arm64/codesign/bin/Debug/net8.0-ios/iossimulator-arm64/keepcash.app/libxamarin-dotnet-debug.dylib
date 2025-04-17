@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - /Volumes/proystorage/KeepCash/bin/Debug/net8.0-ios/iossimulator-arm64/keepcash.app/libxamarin-dotnet-debug.dylib

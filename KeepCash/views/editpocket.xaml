@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="keepcash.views.editpocket"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False">
+    <Grid
+        Margin="0"
+        Padding="0"
+        BackgroundColor="#FFFEEC"
+        ColumnDefinitions="*"
+        RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+        <ImageButton
+            x:Name="backbtn"
+            Grid.Row="0"
+            Margin="25,30,0,0"
+            Padding="12"
+            Aspect="AspectFit"
+            BackgroundColor="#3F9C55"
+            BorderColor="Black"
+            BorderWidth="1"
+            Clicked="backbtn_Clicked"
+            CornerRadius="22"
+            HeightRequest="40"
+            HorizontalOptions="Start"
+            Source="back.png"
+            VerticalOptions="Center"
+            WidthRequest="60" />
+
+        <Frame
+            Grid.Row="1"
+            Margin="0,22,0,0"
+            Padding="0"
+            BackgroundColor="White"
+            BorderColor="Black"
+            CornerRadius="21"
+            HeightRequest="42"
+            HorizontalOptions="Center"
+            WidthRequest="120">
+            <Label
+                Margin="0"
+                Padding="0"
+                FontFamily="AvenirHeavy"
+                FontSize="14"
+                HorizontalOptions="Center"
+                Text="Pocket Info"
+                TextColor="Black"
+                VerticalOptions="Center" />
+        </Frame>
+
+        <Frame
+            Grid.Row="2"
+            Margin="0,34,0,0"
+            Padding="15"
+            BackgroundColor="White"
+            BorderColor="Black"
+            CornerRadius="25"
+            HeightRequest="71"
+            HorizontalOptions="Center"
+            WidthRequest="84">
+            <Image
+                Margin="0"
+                HorizontalOptions="Center"
+                Source="pocket.png"
+                VerticalOptions="Center" />
+        </Frame>
+
+        <Frame
+            Grid.Row="3"
+            Margin="0,24,0,0"
+            Padding="5"
+            BackgroundColor="Transparent"
+            BorderColor="Black"
+            CornerRadius="15"
+            HasShadow="False"
+            HeightRequest="40"
+            WidthRequest="200">
+
+            <Entry
+                x:Name="Pocketnamelabel"
+                BackgroundColor="Transparent"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                Placeholder="Enter 'Pocket Name'"
+                WidthRequest="200" />
+        </Frame>
+
+
+        <Frame
+            Grid.Row="4"
+            Margin="0,27,0,0"
+            Padding="5"
+            BackgroundColor="White"
+            BorderColor="Black"
+            CornerRadius="15"
+            HeightRequest="78"
+            WidthRequest="342">
+            <Grid ColumnDefinitions="*,*" RowDefinitions="*">
+
+                <Label
+                    Grid.Column="0"
+                    Margin="0"
+                    Padding="0"
+                    FontFamily="AvenirHeavy"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="Amount to keep"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+
+                <Frame
+                    Grid.Column="1"
+                    BackgroundColor="#D9D9D9"
+                    BorderColor="Black"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    HeightRequest="41"
+                    WidthRequest="155">
+
+                    <Entry
+                        x:Name="Amountlabel"
+                        BackgroundColor="Transparent"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Placeholder="Enter 'Amount to keep'"
+                        WidthRequest="200" />
+                </Frame>
+
+            </Grid>
+        </Frame>
+
+        <Frame
+            Grid.Row="5"
+            Margin="0,27,0,0"
+            Padding="5"
+            BackgroundColor="White"
+            BorderColor="Black"
+            CornerRadius="15"
+            HeightRequest="78"
+            WidthRequest="342">
+            <Grid ColumnDefinitions="*,*" RowDefinitions="*">
+
+                <Label
+                    Grid.Column="0"
+                    Margin="0"
+                    Padding="0"
+                    FontFamily="AvenirHeavy"
+                    FontSize="16"
+                    HorizontalOptions="Center"
+                    Text="Available Balance"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+
+                <Frame
+                    Grid.Column="1"
+                    BackgroundColor="#D9D9D9"
+                    BorderColor="Black"
+                    CornerRadius="20"
+                    HasShadow="False"
+                    HeightRequest="41"
+                    WidthRequest="155">
+
+                    <Entry
+                        x:Name="Availablelabel"
+                        IsReadOnly="True"
+                        BackgroundColor="Transparent"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Placeholder="Enter 'Available Balance'"
+                        WidthRequest="200" />
+                </Frame>
+
+            </Grid>
+        </Frame>
+
+        <Button
+            Grid.Row="6"
+            Margin="0,25,0,0"
+            Padding="0"
+            BackgroundColor="White"
+            BorderColor="Black"
+            BorderWidth="1"
+            CornerRadius="22"
+            FontFamily="AvenirHeavy"
+            FontSize="14"
+            HeightRequest="44"
+            HorizontalOptions="Center"
+            Text="Complete !"
+            TextColor="Black"
+            VerticalOptions="Center"
+            WidthRequest="135" />
+
+    </Grid>
+</ContentPage>

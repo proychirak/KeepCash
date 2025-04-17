@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="keepcash.views.category"
+            NavigationPage.HasNavigationBar="False">
+
+     <Grid
+        Margin="0"
+        Padding="0"
+        BackgroundColor="#FFFEEC"
+        ColumnDefinitions="*,*"
+        RowDefinitions="Auto,Auto,Auto,Auto">
+
+         <ImageButton
+            Grid.Row="0"
+            x:Name="backbtn"
+            Clicked="backbtn_Clicked"
+            Source="back.png"
+            Margin="25,30,0,0"
+            Padding="12"
+            Aspect="AspectFit"
+            BackgroundColor="#F7CF46"
+            BorderColor="Black"
+            BorderWidth="1"
+            CornerRadius="22"
+            HeightRequest="40"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+            WidthRequest="60" />
+
+        <Frame
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Margin="0,10,0,0"
+            Padding="0"
+            BackgroundColor="White"
+            BorderColor="Black"
+            CornerRadius="21"
+            HeightRequest="45"
+            HorizontalOptions="Center"
+            WidthRequest="350">
+
+                <Label
+                    Margin="0"
+                    Padding="0"
+                    FontFamily="AvenirHeavy"
+                    FontSize="14"
+                    HorizontalOptions="Center"
+                    Text="Category Info"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+        </Frame>
+
+        <Frame
+            Grid.Row="2"
+            Margin="26,15,0,0"
+            Grid.Column="0"
+            CornerRadius="20"
+            HasShadow="False"
+            HorizontalOptions="Start"
+            BackgroundColor="White"
+            HeightRequest="40"
+            WidthRequest="240"
+            BorderColor="Black">
+
+            <Grid ColumnDefinitions="*,*"
+                VerticalOptions="Center"
+                Padding="10,0">
+
+                <!-- ไอคอนแว่นขยาย -->
+                <Image Source="search.png"
+                    WidthRequest="20"
+                    Grid.Column="1"
+                    HeightRequest="20"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Margin="90,0,0,0" />
+
+                <!-- ช่องค้นหา -->
+                <Entry
+                    Grid.ColumnSpan="2" 
+                    x:Name="MySearchEntry"
+                    Grid.Column="0"
+                    HeightRequest="20"
+                    WidthRequest="200"
+                    Margin="-23,0,0,0"
+                    Placeholder="ค้นหา..."
+                    BackgroundColor="Transparent"
+                    FontSize="14"
+                    VerticalOptions="Center"/>
+                    <!-- TextChanged="OnSearchTextChanged"  -->
+            </Grid>
+        </Frame>
+
+
+       <Button
+        Grid.Row="2"
+        Grid.Column="1"
+        x:Name="DateButton"
+        Margin="50,12,0,0"
+        Text="Date"
+        Clicked="OnDateButtonClicked"
+        BackgroundColor="White"
+        BorderColor="Black"
+        BorderWidth="1"
+        TextColor="Black"
+        WidthRequest="100"
+        HeightRequest="40"
+        CornerRadius="22"
+        FontFamily="AvenirHeavy"
+        FontSize="14"/>
+
+        <!-- DatePicker ที่ซ่อนไว้ -->
+        <DatePicker
+            x:Name="HiddenDatePicker"
+            IsVisible="False"
+            DateSelected="OnDateSelected"/>
+
+     <Frame
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Margin="0,12,0,0"
+            Padding="0"
+            BackgroundColor="White"
+            BorderColor="Black"
+            CornerRadius="21"
+            HeightRequest="570"
+            HorizontalOptions="Center"
+            WidthRequest="350">
+    </Frame>
+           
+            
+       
+                            
+       
+
+    </Grid>
+</ContentPage>

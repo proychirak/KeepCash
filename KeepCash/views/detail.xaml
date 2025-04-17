@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="keepcash.views.detail"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False"
+    xmlns:local="keepcash.Models.TypeData">
+
+    <Grid
+        Margin="0"
+        Padding="0"
+        BackgroundColor="#FFFEEC"
+        ColumnDefinitions="*"
+        RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+        <ImageButton
+            x:Name="settingbtn"
+            Grid.Row="0"
+            Margin="0,0,30,12"
+            Padding="5"
+            Aspect="AspectFit"
+            BackgroundColor="#3F9C55"
+            BorderColor="Black"
+            BorderWidth="1"
+            Clicked="settingbtn_Clicked"
+            CornerRadius="22"
+            HeightRequest="40"
+            HorizontalOptions="End"
+            Source="settingbtn.png"
+            VerticalOptions="Center"
+            WidthRequest="40" />
+
+        <Frame
+            Grid.Row="1"
+            Margin="0,0,0,0"
+            Padding="5"
+            BackgroundColor="White"
+            BorderColor="Black"
+            CornerRadius="15"
+            HeightRequest="78"
+            WidthRequest="342">
+            <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+
+                <Label
+                    x:Name="PocketLabel"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="17,5,0,0"
+                    Padding="0"
+                    FontFamily="AvenirHeavy"
+                    FontSize="15"
+                    HorizontalOptions="Start"
+                    TextColor="Black"
+                    TextDecorations="Underline"
+                    VerticalOptions="Center" />
+
+                <Label
+                    x:Name="AvilableLabel"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="17,0,0,0"
+                    Padding="0"
+                    FontFamily="AvenirHeavy"
+                    FontSize="15"
+                    HorizontalOptions="Start"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+
+                <Image
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="65,32,0,0.0"
+                    Aspect="AspectFit"
+                    HeightRequest="44.16"
+                    Source="pocket.png"
+                    WidthRequest="50" />
+            </Grid>
+        </Frame>
+
+        <Grid
+            Grid.Row="2"
+            Margin="0,10,0,0"
+            ColumnDefinitions="*,*,*,*"
+            RowDefinitions="*,*,*,*">
+
+            <ImageButton
+                x:Name="HealthButton"
+                Grid.Row="2"
+                BorderWidth="5"
+                Aspect="Fill"
+                BackgroundColor="Transparent"
+                CornerRadius="22"
+                HeightRequest="45"
+                Source="health.png"
+                WidthRequest="45"
+                Clicked="healthbtn_Clicked" />
+
+            <Label
+                Grid.Row="3"
+                Grid.Column="0"
+                Margin="0,4,0,0"
+                Padding="0"
+                FontFamily="AvenirHeavy"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Text="Health"
+                TextColor="Black"
+                VerticalOptions="Center" />
+
+            <ImageButton
+                x:Name="PersonalButton"
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="0"
+                Aspect="Fill"
+                BorderWidth="1"
+                CornerRadius="22"
+                HeightRequest="45"
+                HorizontalOptions="Center"
+                Source="personal.png"
+                VerticalOptions="Center"
+                WidthRequest="45"
+                Clicked="personalbtn_Clicked" />
+
+
+            <Label
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="0,4,0,0"
+                Padding="0"
+                FontFamily="AvenirHeavy"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Text="Personal"
+                TextColor="Black"
+                VerticalOptions="Center" />
+
+            <ImageButton
+                x:Name="FareButton"
+                Grid.Row="2"
+                Grid.Column="2"
+                Margin="0"
+                Aspect="Fill"
+                BorderWidth="1"
+                CornerRadius="22"
+                HeightRequest="45"
+                HorizontalOptions="Center"
+                Source="fare.png"
+                VerticalOptions="Center"
+                WidthRequest="45"
+                Clicked="farebtn_Clicked" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="2"
+                Margin="0,4,0,0"
+                Padding="0"
+                FontFamily="AvenirHeavy"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Text="Fare"
+                TextColor="Black"
+                VerticalOptions="Center" />
+
+            <ImageButton
+                x:Name="OthersButton"
+                Grid.Row="2"
+                Grid.Column="3"
+                Margin="0"
+                Aspect="Fill"
+                BorderWidth="1"
+                CornerRadius="22"
+                HeightRequest="45"
+                HorizontalOptions="Center"
+                Source="others.png"
+                VerticalOptions="Center"
+                WidthRequest="45"
+                Clicked="othersbtn_Clicked" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="3"
+                Margin="0,4,0,0"
+                Padding="0"
+                FontFamily="AvenirHeavy"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Text="Education"
+                TextColor="Black"
+                VerticalOptions="Center" />
+            <ImageButton
+                x:Name="IncomeButton"
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="0"
+                Aspect="Fill"
+                BorderWidth="1"
+                CornerRadius="22"
+                HeightRequest="48"
+                HorizontalOptions="Center"
+                Source="otherincome.png"
+                VerticalOptions="Center"
+                WidthRequest="48"
+                Clicked="incomebtn_Clicked" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0,4,0,0"
+                Padding="0"
+                Background="AliceBlue"
+                FontFamily="AvenirHeavy"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Text="Income"
+                TextColor="Black"
+                VerticalOptions="Center" />
+
+            <ImageButton
+                x:Name="FoodButton"
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="0"
+                Aspect="AspectFit"
+                BorderWidth="1"
+                CornerRadius="22"
+                HeightRequest="35"
+                HorizontalOptions="Center"
+                Source="food.png"
+                VerticalOptions="Center"
+                WidthRequest="35"
+                Clicked="foodbtn_Clicked" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0,4,0,0"
+                Padding="0"
+                FontFamily="AvenirHeavy"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Text="Food"
+                TextColor="Black"
+                VerticalOptions="Center" />
+
+            <ImageButton
+                x:Name="BillsButton"
+                Grid.Row="0"
+                Grid.Column="2"
+                Margin="0"
+                Aspect="Fill"
+                BorderWidth="1"
+                CornerRadius="22"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                Source="bills.png"
+                VerticalOptions="Center"
+                WidthRequest="50"
+                Clicked="billsbtn_Clicked" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="2"
+                Margin="0,4,0,0"
+                Padding="0"
+                FontFamily="AvenirHeavy"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Text="Bills"
+                TextColor="Black"
+                VerticalOptions="Center" />
+
+            <ImageButton
+                x:Name="EducationButton"
+                Grid.Row="0"
+                Grid.Column="3"
+                Margin="0"
+                Aspect="Fill"
+                BorderWidth="1"
+                CornerRadius="22"
+                HeightRequest="47"
+                HorizontalOptions="Center"
+                Source="education.png"
+                VerticalOptions="Center"
+                WidthRequest="47"
+                Clicked="educationbtn_Clicked" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="3"
+                Margin="0,4,0,0"
+                Padding="0"
+                FontFamily="AvenirHeavy"
+                FontSize="12"
+                HorizontalOptions="Center"
+                Text="Others"
+                TextColor="Black"
+                VerticalOptions="Center" />
+        </Grid>
+
+        <StackLayout
+            Grid.Row="3"
+            Margin="8,10,0,0"
+            Padding="0"
+            BackgroundColor="Transparent"
+            WidthRequest="348">
+
+            <Grid
+                Margin="0,0,0,0"
+                Padding="0"
+                BackgroundColor="Transparent"
+                ColumnDefinitions="Auto,Auto"
+                HorizontalOptions="Start"
+                RowDefinitions="Auto">
+
+                <Frame
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Margin="0,0,0,0"
+                    Padding="0"
+                    BackgroundColor="White"
+                    BorderColor="Black"
+                    CornerRadius="15"
+                    WidthRequest="130" />
+
+                <Button
+                    x:Name="DateButton"
+                    Grid.Column="0"
+                    Margin="10,0,0,0"
+                    Padding="10,0"
+                    Background="Transparent"
+                    Clicked="OnDateButtonClicked"
+                    FontFamily="AvenirHeavy"
+                    FontSize="14"
+                    HorizontalOptions="Center"
+                    Text="Select Date"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+
+                <DatePicker
+                    x:Name="HiddenDatePicker"
+                    Date="{Binding SelectedDate}"
+                    DateSelected="OnDateSelected"
+                    IsVisible="False" />
+            </Grid>
+        </StackLayout>
+
+        <Frame
+            Grid.Row="4"
+            Margin="0,10,0,0"
+            Padding="5"
+            BackgroundColor="White"
+            BorderColor="Black"
+            CornerRadius="15"
+            HeightRequest="78"
+            WidthRequest="342">
+            <Grid ColumnDefinitions="*,Auto,*" RowDefinitions="*">
+
+                <Entry
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="8,0,0,0"
+                    x:Name="DetailLabel"
+                    BackgroundColor="Transparent"
+                    HeightRequest="25"
+                    HorizontalOptions="Start"
+                    HorizontalTextAlignment="Start"
+                    Placeholder="Detail"
+                    PlaceholderColor="Black"
+                    WidthRequest="164" />
+
+                <Frame
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="115,0,0,0"
+                    BackgroundColor="#D9D9D9"
+                    BorderColor="Black"
+                    CornerRadius="15"
+                    HeightRequest="31"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    WidthRequest="83">
+
+                    <Entry
+                        x:Name="PriceLabel"
+                        Margin="0"
+                        BackgroundColor="Transparent"
+                        HeightRequest="40"
+                        HorizontalTextAlignment="Center"
+                        Placeholder="Enter Price"
+                        PlaceholderColor="Black"
+                        WidthRequest="200" />
+                </Frame>
+
+                <ImageButton
+                    Clicked="CheckButton_Clicked"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Margin="10,0,0,0"
+                    Padding="5"
+                    Aspect="AspectFit"
+                    BackgroundColor="#74C587"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    CornerRadius="22"
+                    HeightRequest="31"
+                    HorizontalOptions="Start"
+                    Source="check.png"
+                    VerticalOptions="Center"
+                    WidthRequest="31" />
+            </Grid>
+        </Frame>
+
+        <Frame
+            Grid.Row="5"
+            Margin="0,10,0,0"
+            Padding="5"
+            BackgroundColor="White"
+            BorderColor="Black"
+            CornerRadius="15"
+            HeightRequest="282"
+            WidthRequest="342">
+
+            <ListView 
+                x:Name="TypeListView"
+                Background="Transparent"
+                Margin="-40,5,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:TypeData">
+                        <ViewCell>
+                            <Grid 
+                                ColumnDefinitions="*,*,*"
+                                BackgroundColor="Transparent"
+                                WidthRequest="300"
+                                HeightRequest="40"
+                                VerticalOptions="Start"
+                                HorizontalOptions="Center"
+                                >
+                                <Frame
+                                    Grid.Column="0"
+                                    Margin="0,0,0,0"
+                                    Padding="0"
+                                    BackgroundColor="{Binding TypeColor}"
+                                    BorderColor="Black"
+                                    CornerRadius="20"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    HeightRequest="40"
+                                    WidthRequest="40">
+                                    <Image
+                                        Margin="0,0,0,0"
+                                        Aspect="AspectFit"
+                                        Source="{Binding TypeImage}"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        WidthRequest="40"
+                                        HeightRequest="40"/>
+                                </Frame>
+                                <Label
+                                    Grid.Column="1"
+                                    Margin="0,0,0,0"
+                                    Padding="0"
+                                    FontFamily="AvenirHeavy"
+                                    FontSize="15"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding TypeName}"
+                                    TextColor="Black"
+                                    VerticalOptions="Center" />
+                                <Frame
+                                    Grid.Column="2"
+                                    Margin="0,0,0,0"
+                                    Padding="0"
+                                    BackgroundColor="#D9D9D9"
+                                    BorderColor="Black"
+                                    CornerRadius="15"
+                                    HeightRequest="31"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="Center"
+                                    WidthRequest="100">
+                                    <Label
+                                        Margin="0,0,0,0"
+                                        Padding="0"
+                                        FontFamily="AvenirHeavy"
+                                        FontSize="15"
+                                        HorizontalOptions="Center"
+                                        Text="{Binding Total}"
+                                        TextColor="Black"
+                                        VerticalOptions="Center" />
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Frame>
+
+        <Grid
+            Grid.Row="6"
+            Margin="-10"
+            Padding="20"
+            BackgroundColor="Transparent"
+            ColumnDefinitions="*,*,*"
+            HorizontalOptions="Center"
+            VerticalOptions="End"
+            WidthRequest="345">
+
+            <Frame
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="0"
+                BackgroundColor="White"
+                BorderColor="Black"
+                CornerRadius="32"
+                HeightRequest="64"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="345" />
+
+            <ImageButton
+                x:Name="menu1btn"
+                Grid.Column="0"
+                Margin="0"
+                Padding="10"
+                Aspect="AspectFit"
+                BackgroundColor="White"
+                BorderColor="Black"
+                BorderWidth="1"
+                Clicked="menu1btn_Clicked"
+                CornerRadius="25"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                Source="menu1.png"
+                VerticalOptions="Center"
+                WidthRequest="60" />
+
+            <ImageButton
+                x:Name="menu2btn"
+                Grid.Column="1"
+                Margin="0"
+                Padding="10"
+                Aspect="AspectFit"
+                BackgroundColor="White"
+                BorderColor="Black"
+                BorderWidth="1"
+                Clicked="menu2btn_Clicked"
+                CornerRadius="25"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                Source="menu2.png"
+                VerticalOptions="Center"
+                WidthRequest="60" />
+
+            <ImageButton
+                x:Name="menu3btn"
+                Grid.Column="2"
+                Margin="0"
+                Padding="5"
+                Aspect="AspectFit"
+                BackgroundColor="White"
+                BorderColor="Black"
+                BorderWidth="1"
+                Clicked="menu3btn_Clicked"
+                CornerRadius="25"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                Source="menu3.png"
+                VerticalOptions="Center"
+                WidthRequest="60" />
+        </Grid>
+
+    </Grid>
+</ContentPage>

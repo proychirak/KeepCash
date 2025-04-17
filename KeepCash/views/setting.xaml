@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="keepcash.views.setting"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False">
+    <Grid
+        Margin="0"
+        Padding="0"
+        BackgroundColor="#FFFEEC"
+        ColumnDefinitions="Auto"
+        RowDefinitions="Auto,Auto,Auto">
+
+        <Button
+            x:Name="HomeButton"
+            Clicked="Gohome"
+            Grid.Row="0"
+            Margin="22,30,0,0"
+            BackgroundColor="#E01073"
+            BorderColor="Black"
+            BorderWidth="1"
+            CornerRadius="22"
+            FontFamily="AvenirHeavy"
+            HeightRequest="30"
+            HorizontalOptions="Start"
+            Text="Home !"
+            TextColor="#FFFFFF"
+            WidthRequest="120" />
+
+        <Frame
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            Margin="22,20,0,0"
+            Padding="0"
+            BackgroundColor="White"
+            BorderColor="Black"
+            CornerRadius="15"
+            HeightRequest="267"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="360">
+
+            <Grid
+                Padding="0"
+                BackgroundColor="White"
+                ColumnDefinitions="*,Auto"
+                HeightRequest="270"
+                RowDefinitions="*,*,*,*">
+
+                <Frame
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="10,0,0,0"
+                    Padding="0"
+                    BackgroundColor="#D9D9D9"
+                    BorderColor="Black"
+                    CornerRadius="15"
+                    HasShadow="False"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    WidthRequest="126">
+
+                    <Label
+                        FontFamily="AvenirHeavy"
+                        FontSize="14"
+                        HorizontalOptions="Center"
+                        Text="Notification"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                </Frame>
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="10,15,0,0"
+                    FontFamily="AvenirHeavy"
+                    FontSize="14"
+                    HorizontalOptions="Start"
+                    LineBreakMode="WordWrap"
+                    MaxLines="2"
+                    Text="When spending more than the specified amount. "
+                    TextColor="Black"
+                    VerticalOptions="Start" />
+
+                <!-- <Switch IsToggled="True"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="0,5,10,0"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center" >
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="On">
+                                    <VisualState.Setters>
+                                        <Setter Property="ThumbColor" Value="White"/>
+                                        <Setter Property="OnColor" Value="DarkGreen" />
+
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Off">
+                                    <VisualState.Setters>
+                                        <Setter Property="ThumbColor" Value="White" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                </Switch> -->
+
+
+                <BoxView
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3"
+                    Margin="0"
+                    BackgroundColor="Black"
+                    HeightRequest="1"
+                    VerticalOptions="Center" />
+
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Margin="10,-50,0,0"
+                    FontFamily="AvenirHeavy"
+                    FontSize="14"
+                    HorizontalOptions="Start"
+                    LineBreakMode="WordWrap"
+                    MaxLines="2"
+                    Text="Daily notification. "
+                    TextColor="Black"
+                    VerticalOptions="Center" />
+
+                <Frame
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Margin="100,-50,0,0"
+                    Padding="0"
+                    BackgroundColor="#D9D9D9"
+                    BorderColor="Black"
+                    CornerRadius="15"
+                    HasShadow="False"
+                    HeightRequest="30"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="65">
+                    <Picker
+                        x:Name="TimePicker"
+                        Grid.Column="0"
+                        FontFamily="AvenirHeavy"
+                        HeightRequest="40"
+                        HorizontalTextAlignment="Center"
+                        WidthRequest="120" />
+                </Frame>
+
+                <!-- <Switch IsToggled="True"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Margin="0,-50,10,0"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center" >
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="On">
+                                    <VisualState.Setters>
+                                        <Setter Property="ThumbColor" Value="White"/>
+                                        <Setter Property="OnColor" Value="DarkGreen" />
+
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Off">
+                                    <VisualState.Setters>
+                                        <Setter Property="ThumbColor" Value="White" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                </Switch> -->
+
+            </Grid>
+
+        </Frame>
+
+        <Frame
+            Grid.Row="2"
+            Grid.ColumnSpan="3"
+            Margin="22,20,0,0"
+            Padding="0"
+            BackgroundColor="White"
+            BorderColor="Black"
+            CornerRadius="15"
+            HeightRequest="380"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            WidthRequest="360">
+
+            <Grid
+                BackgroundColor="White"
+                ColumnDefinitions="*,*,*"
+                HeightRequest="270"
+                RowDefinitions="*,*,*">
+
+                <Frame
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="0,-30,0,0"
+                    Padding="0"
+                    BackgroundColor="#D9D9D9"
+                    BorderColor="Black"
+                    CornerRadius="15"
+                    HasShadow="False"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start"
+                    WidthRequest="126">
+
+                    <Label
+                        FontFamily="AvenirHeavy"
+                        FontSize="14"
+                        HorizontalOptions="Center"
+                        Text="Theme"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                </Frame>
+
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="40,0,0,0"
+                    HeightRequest="225"
+                    ImageSource="lightmode.png"
+                    VerticalOptions="Center"
+                    WidthRequest="108" />
+
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Margin="0,0,40,0"
+                    HeightRequest="225"
+                    ImageSource="darkmode.png"
+                    VerticalOptions="Center"
+                    WidthRequest="108" />
+
+               <!-- <HorizontalStackLayout 
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3"
+                    Spacing="155"
+                    Margin="0,100,0,0"
+                    HorizontalOptions="Center"> -->
+                    
+                    <!--  Light Mode Button  -->
+                    <!-- <Button
+                        x:Name="LightButton"
+                        BackgroundColor="White"
+                        BorderColor="Gray"
+                        BorderWidth="2"
+                        CornerRadius="22"
+                        HeightRequest="20"
+                        WidthRequest="20" /> -->
+
+                    <!--  Dark Mode Button  -->
+                    <!-- <Button
+                        Padding="0"
+                        Text="hi"
+                        x:Name="DarkButton"
+                        BackgroundColor="#FFB20FC1"
+                        BorderColor="Gray"
+                        BorderWidth="2"
+                        CornerRadius="22"
+                        HeightRequest="20"
+                        WidthRequest="20" /> -->
+                <!-- </HorizontalStackLayout> -->
+            </Grid>
+
+        </Frame>
+
+
+    </Grid>
+
+</ContentPage>

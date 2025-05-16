@@ -7,7 +7,7 @@
      <Grid
         Margin="0"
         Padding="0"
-        BackgroundColor="#FFFEEC"
+        BackgroundColor="{AppThemeBinding Light={StaticResource LightBG}, Dark={StaticResource DarkBG}}"
         ColumnDefinitions="*,*"
         RowDefinitions="Auto,Auto,Auto,Auto">
 

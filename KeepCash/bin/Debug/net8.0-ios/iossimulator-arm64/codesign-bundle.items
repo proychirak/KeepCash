@@ -12,7 +12,7 @@
       <CodesignDisableTimestamp>true</CodesignDisableTimestamp>
       <CodesignKeychain></CodesignKeychain>
       <CodesignUseHardenedRuntime></CodesignUseHardenedRuntime>
-      <SourceProjectPath>/Volumes/proystorage/KeepCash</SourceProjectPath>
+      <SourceProjectPath>/Users/proychira/Documents/GitHub/KeepCash/KeepCash</SourceProjectPath>
     </_CodesignBundle>
   </ItemGroup>
 </Project>

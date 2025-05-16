@@ -7,7 +7,7 @@
     <Grid
         Margin="0"
         Padding="0"
-        BackgroundColor="#FFFEEC"
+        BackgroundColor="{AppThemeBinding Light={StaticResource LightBG}, Dark={StaticResource DarkBG}}"
         ColumnDefinitions="*"
         RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
 
@@ -80,6 +80,7 @@
             <Entry
                 x:Name="Pocketnamelabel"
                 BackgroundColor="Transparent"
+                TextColor="Black"
                 HeightRequest="40"
                 HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
@@ -122,6 +123,7 @@
                     <Entry
                         x:Name="Amountlabel"
                         BackgroundColor="Transparent"
+                        TextColor="Black"
                         HeightRequest="40"
                         HorizontalOptions="Center"
                         HorizontalTextAlignment="Center"
@@ -167,6 +169,7 @@
                         x:Name="Availablelabel"
                         IsReadOnly="True"
                         BackgroundColor="Transparent"
+                        TextColor="Black"
                         HeightRequest="40"
                         HorizontalOptions="Center"
                         HorizontalTextAlignment="Center"

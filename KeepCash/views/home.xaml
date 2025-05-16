@@ -3,11 +3,14 @@
     x:Class="keepcash.views.home"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:keepcash;assembly=keepcash"
+    xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
+    xmlns:lvcCore="clr-namespace:LiveChartsCore;assembly=LiveChartsCore"
     NavigationPage.HasNavigationBar="False">
     <Grid
         Margin="0"
         Padding="0"
-        BackgroundColor="#FFFEEC"
+        BackgroundColor="{AppThemeBinding Light={StaticResource LightBG}, Dark={StaticResource DarkBG}}"
         ColumnDefinitions="*"
         RowDefinitions="Auto,Auto,Auto,Auto,Auto,*">
 
@@ -167,13 +170,8 @@
                         x:Name="AmountToKeepLabel"
                         VerticalOptions="Center" />
                 </Frame>
-                        
-                       
-
             </Grid>
         </Frame>    
-
-
         <Frame
             Grid.Row="3"
             Margin="0,10,0,0"
@@ -195,15 +193,13 @@
                     VerticalOptions="Center" />
             </Frame>
         
-        <BoxView
+        <lvc:PieChart
+            x:Name="PieChart"
             Grid.Row="4"
-            Margin="0, 25, 0, 0"
-            BackgroundColor="#E01073"
-            HorizontalOptions="Center"
-            WidthRequest="240" 
-            HeightRequest="240"
-            CornerRadius="120"
-            />
+            HeightRequest="300"
+            WidthRequest="400"
+            BackgroundColor="Transparent">
+        </lvc:PieChart>
 
         <Grid
             Grid.Row="5"

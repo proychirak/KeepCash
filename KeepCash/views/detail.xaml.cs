@@ -3,12 +3,14 @@ using System.Globalization;
 using System.Threading.Tasks;
 using keepcash.Models;
 using System.Collections.ObjectModel;
+using Plugin.LocalNotification;
 
 public partial class detail : ContentPage
 {
 	public DateTime SelectedDate { get; set; } = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0, DateTimeKind.Utc);
 	private int typeindex { get; set; } = 0;
 	private ObservableCollection<TypeData> typeDatas { get; set; }
+	private Color borderColor { get; set; } = Color.FromHex("#1f1f1f");
 
 	public detail()
 	{
@@ -84,56 +86,56 @@ public partial class detail : ContentPage
 	{
 		settype(5);
 		HealthButton.BorderWidth = 5;
-		HealthButton.BorderColor = Color.FromHex("#FF3E3E3E");
+		HealthButton.BorderColor = borderColor;
 	}
 
 	private void foodbtn_Clicked(object sender, EventArgs e)
 	{
 		settype(2);
 		FoodButton.BorderWidth = 5;
-		FoodButton.BorderColor = Color.FromHex("#FF3E3E3E");
+		FoodButton.BorderColor = borderColor;
 	}
 
 	private void farebtn_Clicked(object sender, EventArgs e)
 	{
-		settype(6);
+		settype(7);
 		FareButton.BorderWidth = 5;
-		FareButton.BorderColor = Color.FromHex("#FF3E3E3E");
+		FareButton.BorderColor = borderColor;
 	}
 
 	private void incomebtn_Clicked(object sender, EventArgs e)
 	{
 		settype(1);
 		IncomeButton.BorderWidth = 5;
-		IncomeButton.BorderColor = Color.FromHex("#FF3E3E3E");
+		IncomeButton.BorderColor = borderColor;
 	}
 
 	private void othersbtn_Clicked(object sender, EventArgs e)
 	{
-		settype(7);
+		settype(8);
 		OthersButton.BorderWidth = 5;
-		OthersButton.BorderColor = Color.FromHex("#FF3E3E3E");
+		OthersButton.BorderColor = borderColor;
 	}
 
 	private void personalbtn_Clicked(object sender, EventArgs e)
 	{
-		settype(5);
+		settype(6);
 		PersonalButton.BorderWidth = 5;
-		PersonalButton.BorderColor = Color.FromHex("#FF3E3E3E");
+		PersonalButton.BorderColor = borderColor;
 	}
 
 	private void educationbtn_Clicked(object sender, EventArgs e)
 	{
 		settype(4);
 		EducationButton.BorderWidth = 5;
-		EducationButton.BorderColor = Color.FromHex("#FF3E3E3E");
+		EducationButton.BorderColor = borderColor;
 	}
 
 	private void billsbtn_Clicked(object sender, EventArgs e)
 	{
 		settype(3);
 		BillsButton.BorderWidth = 5;
-		BillsButton.BorderColor = Color.FromHex("#FF3E3E3E");
+		BillsButton.BorderColor = borderColor;
 	}
 
 	private void settype(int index)
@@ -151,6 +153,15 @@ public partial class detail : ContentPage
 		FareButton.BorderWidth = 0;
 		OthersButton.BorderWidth = 0;
 
+		AppTheme currentTheme = Application.Current.RequestedTheme;
+		if (currentTheme == AppTheme.Dark)
+		{
+			borderColor = Color.FromHex("#FFFEEC");
+		}
+		else
+		{
+			borderColor = Color.FromHex("#1f1f1f");
+		}
 	}
 
 	private async void CheckButton_Clicked(object sender, EventArgs e)
@@ -169,10 +180,30 @@ public partial class detail : ContentPage
 			Detail = DetailLabel.Text
 		};
 		await App.Database.SaveMoneyHistoryAsync(newHistory);
+
+		float currentSpent = await App.Database.GetExpense(App.pocket.ID);
+		float userDefinedMax = (await App.Database.GetIncome(App.pocket.ID)) - App.pocket.AmountToKeep;
+		Console.WriteLine($"Current Spent: {currentSpent}, User Defined Max: {userDefinedMax}");
+		if (currentSpent > userDefinedMax)
+		{
+			var notificationTime = DateTime.Now.AddSeconds(1);
+			var request = new NotificationRequest
+			{
+				NotificationId = 1001,
+				Title = "⚠️ Spending Limit Alert",
+				Description = $"You've spent more than your limit ({userDefinedMax} Baht)",
+				Schedule = new NotificationRequestSchedule
+				{
+					NotifyTime = notificationTime,
+					RepeatType = NotificationRepeat.Daily
+				}
+			};
+			await LocalNotificationCenter.Current.Show(request);
+		}
 		settype(0);
 		PriceLabel.Text = string.Empty;
 		DetailLabel.Text = string.Empty;
-		await LoadTypeDataAsync();
+		await LoadTypeDataAsync();	
 	}
 
 }

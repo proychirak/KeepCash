@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Volumes/proystorage/KeepCash/keepcash.csproj": {}
+    "/Users/proychira/Documents/GitHub/KeepCash/KeepCash/keepcash.csproj": {}
   },
   "projects": {
-    "/Volumes/proystorage/KeepCash/keepcash.csproj": {
+    "/Users/proychira/Documents/GitHub/KeepCash/KeepCash/keepcash.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Volumes/proystorage/KeepCash/keepcash.csproj",
+        "projectUniqueName": "/Users/proychira/Documents/GitHub/KeepCash/KeepCash/keepcash.csproj",
         "projectName": "keepcash",
-        "projectPath": "/Volumes/proystorage/KeepCash/keepcash.csproj",
+        "projectPath": "/Users/proychira/Documents/GitHub/KeepCash/KeepCash/keepcash.csproj",
         "packagesPath": "/Users/proychira/.nuget/packages/",
-        "outputPath": "/Volumes/proystorage/KeepCash/obj/",
+        "outputPath": "/Users/proychira/Documents/GitHub/KeepCash/KeepCash/obj/",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
@@ -59,6 +59,18 @@
               "target": "Package",
               "version": "[3.*, )"
             },
+            "LiveChartsCore": {
+              "target": "Package",
+              "version": "[2.0.0-rc5.4, )"
+            },
+            "LiveChartsCore.SkiaSharpView": {
+              "target": "Package",
+              "version": "[2.0.0-rc5.4, )"
+            },
+            "LiveChartsCore.SkiaSharpView.Maui": {
+              "target": "Package",
+              "version": "[2.0.0-rc5.4, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.1, )"
@@ -77,6 +89,10 @@
               "version": "[8.0.15, )",
               "autoReferenced": true
             },
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "SQLitePCLRaw.bundle_green": {
               "target": "Package",
               "version": "[2.1.10, )"
@@ -88,6 +104,10 @@
             "SQLitePCLRaw.provider.dynamic_cdecl": {
               "target": "Package",
               "version": "[2.1.10, )"
+            },
+            "SkiaSharp.Views.Maui.Controls": {
+              "target": "Package",
+              "version": "[3.119.0, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -122,6 +142,18 @@
               "target": "Package",
               "version": "[3.*, )"
             },
+            "LiveChartsCore": {
+              "target": "Package",
+              "version": "[2.0.0-rc5.4, )"
+            },
+            "LiveChartsCore.SkiaSharpView": {
+              "target": "Package",
+              "version": "[2.0.0-rc5.4, )"
+            },
+            "LiveChartsCore.SkiaSharpView.Maui": {
+              "target": "Package",
+              "version": "[2.0.0-rc5.4, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.1, )"
@@ -140,6 +172,10 @@
               "version": "[8.0.15, )",
               "autoReferenced": true
             },
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "SQLitePCLRaw.bundle_green": {
               "target": "Package",
               "version": "[2.1.10, )"
@@ -151,6 +187,10 @@
             "SQLitePCLRaw.provider.dynamic_cdecl": {
               "target": "Package",
               "version": "[2.1.10, )"
+            },
+            "SkiaSharp.Views.Maui.Controls": {
+              "target": "Package",
+              "version": "[3.119.0, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -185,6 +225,18 @@
               "target": "Package",
               "version": "[3.*, )"
             },
+            "LiveChartsCore": {
+              "target": "Package",
+              "version": "[2.0.0-rc5.4, )"
+            },
+            "LiveChartsCore.SkiaSharpView": {
+              "target": "Package",
+              "version": "[2.0.0-rc5.4, )"
+            },
+            "LiveChartsCore.SkiaSharpView.Maui": {
+              "target": "Package",
+              "version": "[2.0.0-rc5.4, )"
+            },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
               "version": "[8.0.1, )"
@@ -203,6 +255,10 @@
               "version": "[8.0.15, )",
               "autoReferenced": true
             },
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "SQLitePCLRaw.bundle_green": {
               "target": "Package",
               "version": "[2.1.10, )"
@@ -214,6 +270,10 @@
             "SQLitePCLRaw.provider.dynamic_cdecl": {
               "target": "Package",
               "version": "[2.1.10, )"
+            },
+            "SkiaSharp.Views.Maui.Controls": {
+              "target": "Package",
+              "version": "[3.119.0, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -244,7 +304,22 @@
         }
       },
       "runtimes": {
+        "android-arm": {
+          "#import": []
+        },
+        "android-arm64": {
+          "#import": []
+        },
+        "android-x64": {
+          "#import": []
+        },
+        "android-x86": {
+          "#import": []
+        },
         "iossimulator-arm64": {
+          "#import": []
+        },
+        "maccatalyst-arm64": {
           "#import": []
         }
       }

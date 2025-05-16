@@ -28,5 +28,7 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
+	<key>NSUserNotificationUsageDescription</key>
+	<string>We use this to remind you about your spending.</string>
 </dict>
 </plist>

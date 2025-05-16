@@ -145,6 +145,12 @@
     <_LinkerFrameworks Include="JavaScriptCore">
       <IsWeak>false</IsWeak>
     </_LinkerFrameworks>
+    <_LinkerFrameworks Include="libHarfBuzzSharp">
+      <IsWeak>false</IsWeak>
+    </_LinkerFrameworks>
+    <_LinkerFrameworks Include="libSkiaSharp">
+      <IsWeak>false</IsWeak>
+    </_LinkerFrameworks>
     <_LinkerFrameworks Include="LocalAuthentication">
       <IsWeak>false</IsWeak>
     </_LinkerFrameworks>

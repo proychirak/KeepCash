@@ -16,6 +16,30 @@ public class MoneyDatabase
 	{
 	}
 
+	public async Task<List<MoneyHistory>> GetYearData(int selectedYear)
+	{
+		await init();
+		var all = await _database
+			.Table<MoneyHistory>()
+			.Where(n => n.PocketDataId == App.pocket.ID)
+			.ToListAsync();
+
+		return all.Where(n => n.Date.Year == selectedYear).ToList();
+	}
+
+	public async Task<List<MoneyHistory>> GetMonthData(int selectedYear, int selectedMonth)
+	{
+		await init();
+		var all = await _database
+			.Table<MoneyHistory>()
+			.Where(n => n.PocketDataId == App.pocket.ID)
+			.ToListAsync();
+
+		return all
+			.Where(n => n.Date.Year == selectedYear && n.Date.Month == selectedMonth)
+			.ToList();
+	}
+
 	public async Task<float> GetExpense(int id)
 	{
 		await init();

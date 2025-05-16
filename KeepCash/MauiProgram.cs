@@ -1,5 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using DotNet.Meteor.HotReload.Plugin;
+using SkiaSharp.Views.Maui.Controls.Hosting;
+using LiveChartsCore.SkiaSharpView.Maui;
+using Plugin.LocalNotification;
 
 namespace keepcash;
 
@@ -10,6 +13,9 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseSkiaSharp()
+			.UseLiveCharts()
+			.UseLocalNotification()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

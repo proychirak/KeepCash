@@ -8,9 +8,9 @@
       <dSYMSourcePathExists>false</dSYMSourcePathExists>
       <NoSymbolStrip>true</NoSymbolStrip>
       <dSYMInfoPlistRelativePath>keepcash.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
-      <SymbolFile>/Volumes/proystorage/KeepCash/obj/Debug/net8.0-ios/iossimulator-arm64/mtouch-symbols.list</SymbolFile>
+      <SymbolFile>/Users/proychira/Documents/GitHub/KeepCash/KeepCash/obj/Debug/net8.0-ios/iossimulator-arm64/mtouch-symbols.list</SymbolFile>
       <DSymName>keepcash.app.dSYM</DSymName>
-      <SourceProjectPath>/Volumes/proystorage/KeepCash</SourceProjectPath>
+      <SourceProjectPath>/Users/proychira/Documents/GitHub/KeepCash/KeepCash</SourceProjectPath>
       <IsXPCService></IsXPCService>
     </_PostProcessingItem>
   </ItemGroup>

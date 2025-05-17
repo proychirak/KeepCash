@@ -203,7 +203,18 @@ public partial class detail : ContentPage
 		settype(0);
 		PriceLabel.Text = string.Empty;
 		DetailLabel.Text = string.Empty;
+		AvilableLabel.Text = (await App.Database.GetSummary(App.pocket.ID) - App.pocket.AmountToKeep).ToString() + " Baht";
 		await LoadTypeDataAsync();	
+	}
+
+	private async void ListView_ItemSelected(System.Object sender, Microsoft.Maui.Controls.SelectedItemChangedEventArgs e)
+	{
+		if (e.SelectedItem != null)
+		{
+			TypeData selectedType = e.SelectedItem as TypeData;
+			TypeListView.SelectedItem = null;
+			await Navigation.PushAsync(new views.category(selectedType));
+		}
 	}
 
 }

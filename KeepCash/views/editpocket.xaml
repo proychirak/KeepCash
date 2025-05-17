@@ -80,11 +80,11 @@
             <Entry
                 x:Name="Pocketnamelabel"
                 BackgroundColor="Transparent"
-                TextColor="Black"
                 HeightRequest="40"
                 HorizontalOptions="Center"
                 HorizontalTextAlignment="Center"
                 Placeholder="Enter 'Pocket Name'"
+                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightTXT}}"
                 WidthRequest="200" />
         </Frame>
 

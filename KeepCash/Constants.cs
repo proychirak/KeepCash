@@ -2,7 +2,7 @@ namespace keepcash;
 
 public class Constants
 {
-	public const string DatabaseFileName = "keepcash.db3";
+	public const string DatabaseFileName = "keepcashdb.db3";
 
 	public const SQLite.SQLiteOpenFlags Flags =
 		SQLite.SQLiteOpenFlags.ReadWrite |

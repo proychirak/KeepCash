@@ -104,7 +104,7 @@
                 FontSize="12"
                 HorizontalOptions="Center"
                 Text="Health"
-                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightBG}}"
+                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightTXT}}"
                 VerticalOptions="Center" />
 
             <ImageButton
@@ -132,7 +132,7 @@
                 FontSize="12"
                 HorizontalOptions="Center"
                 Text="Personal"
-                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightBG}}"
+                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightTXT}}"
                 VerticalOptions="Center" />
 
             <ImageButton
@@ -158,7 +158,7 @@
                 FontSize="12"
                 HorizontalOptions="Center"
                 Text="Fare"
-                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightBG}}"
+                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightTXT}}"
                 VerticalOptions="Center" />
 
             <ImageButton
@@ -184,7 +184,7 @@
                 FontSize="12"
                 HorizontalOptions="Center"
                 Text="Education"
-                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightBG}}"
+                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightTXT}}"
                 VerticalOptions="Center" />
             <ImageButton
                 x:Name="IncomeButton"
@@ -210,7 +210,7 @@
                 FontSize="12"
                 HorizontalOptions="Center"
                 Text="Income"
-                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightBG}}"
+                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightTXT}}"
                 VerticalOptions="Center" />
 
             <ImageButton
@@ -236,7 +236,7 @@
                 FontSize="12"
                 HorizontalOptions="Center"
                 Text="Food"
-                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightBG}}"
+                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightTXT}}"
                 VerticalOptions="Center" />
 
             <ImageButton
@@ -262,7 +262,7 @@
                 FontSize="12"
                 HorizontalOptions="Center"
                 Text="Bills"
-                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightBG}}"
+                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightTXT}}"
                 VerticalOptions="Center" />
 
             <ImageButton
@@ -288,7 +288,7 @@
                 FontSize="12"
                 HorizontalOptions="Center"
                 Text="Others"
-                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightBG}}"
+                TextColor="{AppThemeBinding Light={StaticResource DarkBG}, Dark={StaticResource LightTXT}}"
                 VerticalOptions="Center" />
         </Grid>
 
@@ -361,6 +361,7 @@
                     HorizontalTextAlignment="Start"
                     Placeholder="Detail"
                     PlaceholderColor="Black"
+                    TextColor="Black"
                     WidthRequest="164" />
 
                 <Frame
@@ -383,6 +384,7 @@
                         HorizontalTextAlignment="Center"
                         Placeholder="Enter Price"
                         PlaceholderColor="Black"
+                        TextColor="Black"
                         WidthRequest="200" />
                 </Frame>
 
@@ -418,7 +420,8 @@
             <ListView 
                 x:Name="TypeListView"
                 Background="Transparent"
-                Margin="-40,5,0,0">
+                Margin="-40,5,0,0"
+                ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

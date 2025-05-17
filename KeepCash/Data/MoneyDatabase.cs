@@ -63,6 +63,16 @@ public class MoneyDatabase
 		return sum;
 	}
 
+	public async Task<List<MoneyHistory>> GetTypeDataByDate(int id, int type, DateTime date)
+	{
+		await init();
+		var moneyHistoryList = await _database
+			.Table<MoneyHistory>()
+			.Where(n => n.Type == type && n.PocketDataId == id && n.Date.Equals(date))
+			.ToListAsync();
+		return moneyHistoryList;
+	}
+
 	public async Task<float> GetSummary(int id)
 	{
 		await init();

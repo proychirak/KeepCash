@@ -16,7 +16,7 @@ namespace keepcash.views
         private int startYear = 2024; // ปีที่เริ่มใช้แอป
         List<MoneyHistory> histories = new List<MoneyHistory>();
         private int typeindex { get; set; } = 0;
-	    private ObservableCollection<TypeData> typeDatas { get; set; }
+        private ObservableCollection<TypeData> typeDatas { get; set; }
 
         public summarypage()
         {
@@ -72,7 +72,7 @@ namespace keepcash.views
             };
 
             MonthPicker.ItemsSource = months; // เซ็ตค่าลงใน MonthPicker
-            MonthPicker.SelectedIndex = DateTime.Now.Month - 1; // ตั้งค่าปัจจุบันเป็นเดือนนี้
+            MonthPicker.SelectedIndex = DateTime.Now.Month; // ตั้งค่าปัจจุบันเป็นเดือนนี้
         }
 
         private void YearPicker_SelectedIndexChanged(object sender, EventArgs e)
@@ -112,13 +112,13 @@ namespace keepcash.views
             typeDatas = new ObservableCollection<TypeData>();
             typeDatas.Clear();
             typeDatas.Add(new TypeData() { TypeIndex = 1, TypeName = "Income", TypeColor = Color.FromRgba(229, 164, 74, 255), TypeImage = "otherincome.png", Total = 0 });
-			typeDatas.Add(new TypeData() { TypeIndex = 2, TypeName = "Food", TypeColor = Color.FromRgba(86, 154, 87, 255), TypeImage = "food.png", Total = 0 });
-			typeDatas.Add(new TypeData() { TypeIndex = 3, TypeName = "Bills", TypeColor = Color.FromRgba(81, 129, 166, 255), TypeImage = "bills.png", Total = 0 });
-			typeDatas.Add(new TypeData() { TypeIndex = 4, TypeName = "Education", TypeColor = Color.FromRgba(215, 89, 85, 255), TypeImage = "education.png", Total = 0 });
-			typeDatas.Add(new TypeData() { TypeIndex = 5, TypeName = "Health", TypeColor = Color.FromRgba(154, 196, 201, 255), TypeImage = "health.png", Total = 0 });
-			typeDatas.Add(new TypeData() { TypeIndex = 6, TypeName = "Personal", TypeColor = Color.FromRgba(61, 140, 130, 255), TypeImage = "personal.png", Total = 0 });
-			typeDatas.Add(new TypeData() { TypeIndex = 7, TypeName = "Fare", TypeColor = Color.FromRgba(237, 200, 90, 255), TypeImage = "fare.png", Total = 0 });
-			typeDatas.Add(new TypeData() { TypeIndex = 8, TypeName = "Others", TypeColor = Color.FromRgba(172, 85, 147, 255), TypeImage = "others.png", Total = 0 });
+            typeDatas.Add(new TypeData() { TypeIndex = 2, TypeName = "Food", TypeColor = Color.FromRgba(86, 154, 87, 255), TypeImage = "food.png", Total = 0 });
+            typeDatas.Add(new TypeData() { TypeIndex = 3, TypeName = "Bills", TypeColor = Color.FromRgba(81, 129, 166, 255), TypeImage = "bills.png", Total = 0 });
+            typeDatas.Add(new TypeData() { TypeIndex = 4, TypeName = "Education", TypeColor = Color.FromRgba(215, 89, 85, 255), TypeImage = "education.png", Total = 0 });
+            typeDatas.Add(new TypeData() { TypeIndex = 5, TypeName = "Health", TypeColor = Color.FromRgba(154, 196, 201, 255), TypeImage = "health.png", Total = 0 });
+            typeDatas.Add(new TypeData() { TypeIndex = 6, TypeName = "Personal", TypeColor = Color.FromRgba(61, 140, 130, 255), TypeImage = "personal.png", Total = 0 });
+            typeDatas.Add(new TypeData() { TypeIndex = 7, TypeName = "Fare", TypeColor = Color.FromRgba(237, 200, 90, 255), TypeImage = "fare.png", Total = 0 });
+            typeDatas.Add(new TypeData() { TypeIndex = 8, TypeName = "Others", TypeColor = Color.FromRgba(172, 85, 147, 255), TypeImage = "others.png", Total = 0 });
 
             foreach (MoneyHistory history in histories)
             {
@@ -126,7 +126,7 @@ namespace keepcash.views
             }
 
             TypeListView.ItemsSource = typeDatas;
-            
+
             var pieSeriesList = new List<ISeries>();
             for (int i = 0; i < typeDatas.Count; i++)
             {
@@ -140,6 +140,17 @@ namespace keepcash.views
             }
 
             PieChart.Series = pieSeriesList.ToArray();
+        }
+        
+        
+        private async void ListView_ItemSelected(System.Object sender, Microsoft.Maui.Controls.SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem != null)
+            {
+                TypeData selectedType = e.SelectedItem as TypeData;
+                TypeListView.SelectedItem = null;
+                await Navigation.PushAsync(new views.category(selectedType));
+            }
         }
     }
 }

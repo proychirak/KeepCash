@@ -104,7 +104,8 @@
             <ListView 
                 x:Name="TypeListView"
                 Background="Transparent"
-                Margin="-40,5,0,0">
+                Margin="-40,5,0,0"
+                ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
